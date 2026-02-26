@@ -1,0 +1,46 @@
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# virtualenv
+.venv/
+venv/
+ENV/
+
+# environment files (contain API keys)
+.env
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# pathway output
+backend/output/
+*.jsonl
+
+# node
+node_modules/
+
+# misc
+*.log
+*.bak
+*.tmp
+pdf_contents.txt
+extract_pdfs.py

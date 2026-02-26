@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGNIHAWK // TACTICAL COMMAND — CesiumJS Globe</title>
+  <meta name="description"
+    content="Tactical 3D globe command center for strategic operations monitoring across India." />
+
+  <!-- CesiumJS -->
+  <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Widgets/widgets.css" />
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ██ SCANLINE OVERLAY ██ -->
+  <div id="scanline-overlay"></div>
+  <div id="vignette-overlay"></div>
+
+  <!-- ██ CORNER BRACKETS ██ -->
+  <div class="corner-bracket tl"></div>
+  <div class="corner-bracket tr"></div>
+  <div class="corner-bracket bl"></div>
+  <div class="corner-bracket br"></div>
+
+  <!-- ██ HEADER ██ -->
+  <header id="header">
+    <div class="classification">
+      <span class="badge agnihawk-badge">🔥 AGNIHAWK</span>
+      <span class="title">LANDFILL FIRE PREDICTION SYSTEM</span>
+    </div>
+    <div class="status-group">
+      <span>PIPELINE LIVE</span>
+      <div class="dot"></div>
+      <label class="theme-toggle" title="Toggle Light/Dark Mode">
+        <input type="checkbox" id="toggle-theme" />
+        <span class="theme-slider">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </header>
+
+  <!-- ██ CESIUM GLOBE ██ -->
+  <div id="cesiumContainer"></div>
+
+  <!-- ██ LEFT DATA LAYERS PANEL ██ -->
+  <aside id="layers-panel">
+    <div class="panel-header">
+      <h2>Data Layers</h2>
+      <span class="panel-icon">◈</span>
+    </div>
+
+    <div class="layer-group">
+      <div class="layer-group-title">Overlays</div>
+
+      <div class="layer-item active" data-layer="cities">
+        <div class="layer-info">
+          <span class="layer-icon">◉</span>
+          <span class="layer-name">City Markers</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status" style="color:#00ffd5;">ACTIVE</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-cities" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="layer-item" data-layer="grid">
+        <div class="layer-info">
+          <span class="layer-icon">▦</span>
+          <span class="layer-name">Coordinate Grid</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-grid" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="layer-group">
+      <div class="layer-group-title">Imagery</div>
+
+      <div class="layer-item" data-layer="night">
+        <div class="layer-info">
+          <span class="layer-icon">☾</span>
+          <span class="layer-name">Night Lights</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-night" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="layer-item" data-layer="terrain">
+        <div class="layer-info">
+          <span class="layer-icon">▲</span>
+          <span class="layer-name">3D Terrain</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-terrain" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="layer-item" data-layer="buildings3d">
+        <div class="layer-info">
+          <span class="layer-icon">🏙️</span>
+          <span class="layer-name">3D Buildings</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-3d-buildings" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="layer-group">
+      <div class="layer-group-title">Features</div>
+
+      <div class="layer-item" data-layer="aqi">
+        <div class="layer-info">
+          <span class="layer-icon">🌫️</span>
+          <span class="layer-name">Live AQI</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-aqi" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="layer-item" data-layer="saferoute">
+        <div class="layer-info">
+          <span class="layer-icon">🛣️</span>
+          <span class="layer-name">Safe Route</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="layer-status">STANDBY</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggle-safe-route" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ██ AQI INFO PANEL ██ -->
+  <div id="aqi-panel">
+    <div class="aqi-header">
+      <span>AIR QUALITY INDEX</span>
+      <button id="aqi-close" class="popup-close">✕</button>
+    </div>
+    <div class="aqi-body">
+      <div class="aqi-section">
+        <div class="aqi-label">CITY-WIDE AQI</div>
+        <div class="aqi-big-number" id="aqi-city-value">--</div>
+        <div class="aqi-category" id="aqi-city-category">--</div>
+        <div class="aqi-detail">PM2.5: <span id="aqi-pm25">--</span> | PM10: <span id="aqi-pm10">--</span></div>
+      </div>
+      <div class="aqi-divider"></div>
+      <div class="aqi-section">
+        <div class="aqi-label">LANDFILL ZONE</div>
+        <div class="aqi-landfill-name" id="aqi-landfill-name">--</div>
+        <div class="aqi-compare">
+          <div class="aqi-compare-col">
+            <div class="aqi-sub-label">BEFORE</div>
+            <div class="aqi-number" id="aqi-before" style="color:#00e400;">--</div>
+            <div class="aqi-sub-cat" id="aqi-before-cat">--</div>
+          </div>
+          <div class="aqi-arrow">→</div>
+          <div class="aqi-compare-col">
+            <div class="aqi-sub-label">AFTER HAZARD</div>
+            <div class="aqi-number" id="aqi-after" style="color:#ff0000;">--</div>
+            <div class="aqi-sub-cat" id="aqi-after-cat">--</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ██ SAFE ROUTE NAVIGATION PANEL ██ -->
+  <div id="nav-panel">
+    <div class="nav-header">
+      <div class="nav-title">
+        <span style="font-size: 16px;">🚗</span> EVACUATION ROUTE
+      </div>
+      <button id="nav-close" class="popup-close">✕</button>
+    </div>
+
+    <div class="nav-summary">
+      <div class="nav-eta" id="nav-eta">14 min</div>
+      <div class="nav-distance" id="nav-distance">5.2 km</div>
+      <div class="nav-status">Safe Route Generated</div>
+    </div>
+
+    <div class="nav-steps-container">
+      <ul class="nav-steps-list" id="nav-steps-list">
+        <!-- Steps injected via JS -->
+      </ul>
+    </div>
+
+    <button class="nav-start-btn" id="nav-start-btn">START NAVIGATION</button>
+  </div>
+
+  <!-- ██ ALERTS FEED PANEL ██ -->
+  <aside id="alerts-panel">
+    <div class="panel-header">
+      <h2>Live Risk Alerts</h2>
+      <span class="panel-icon" style="color:var(--red)">⚠</span>
+    </div>
+    <div class="alerts-feed" id="alerts-feed">
+      <div class="alert-empty">CONNECTING TO PATHWAY STREAM...</div>
+    </div>
+  </aside>
+
+  <!-- ██ TACTICAL OVERLAY CODES ██ -->
+  <div id="tac-overlay">
+    <div class="tac-line" id="tac-optic">OPTIC VIS:112 SRC:180 DENS:1.42 0.9ms</div>
+    <div class="tac-line" id="tac-designation">KH11-4094 OPS-4168</div>
+  </div>
+
+  <!-- ██ ZOOM CONTROLS ██ -->
+  <div id="zoom-controls">
+    <button id="zoom-in" class="zoom-btn" title="Zoom In">+</button>
+    <button id="zoom-out" class="zoom-btn" title="Zoom Out">−</button>
+    <div class="zoom-divider"></div>
+    <button id="zoom-reset" class="zoom-btn zoom-btn-small" title="Reset View">⟐</button>
+  </div>
+
+  <!-- ██ LOCATIONS PANEL ██ -->
+  <div id="locations-panel">
+    <div class="loc-header">LOCATIONS <span class="loc-expand">+</span></div>
+    <div class="loc-body" id="loc-body">
+      <div class="loc-item">📍 <span id="loc-city">—</span></div>
+      <div class="loc-sub" id="loc-landmark">Landmark: —</div>
+    </div>
+  </div>
+
+  <!-- ██ CITY INFO POPUP ██ -->
+  <div id="city-popup">
+    <div class="popup-header">
+      <h3 id="popup-city-name">—</h3>
+      <button class="popup-close" id="popup-close">✕</button>
+    </div>
+    <div class="popup-body">
+      <div class="popup-field">
+        <div class="popup-label">State / Region</div>
+        <div class="popup-value" id="popup-state">—</div>
+      </div>
+      <div class="popup-field">
+        <div class="popup-label">Description</div>
+        <div class="popup-value" id="popup-description">—</div>
+      </div>
+      <div class="popup-divider"></div>
+      <div class="popup-coords">
+        <div class="popup-field">
+          <div class="popup-label">Latitude</div>
+          <div class="popup-value highlight" id="popup-lat">—</div>
+        </div>
+        <div class="popup-field">
+          <div class="popup-label">Longitude</div>
+          <div class="popup-value highlight" id="popup-lon">—</div>
+        </div>
+      </div>
+      <div class="popup-divider"></div>
+      <div class="popup-coords">
+        <div class="popup-field">
+          <div class="popup-label">Population</div>
+          <div class="popup-value" id="popup-population">—</div>
+        </div>
+        <div class="popup-field">
+          <div class="popup-label">Elevation</div>
+          <div class="popup-value" id="popup-elevation">—</div>
+        </div>
+      </div>
+      <div class="popup-divider"></div>
+      <div class="popup-field">
+        <div class="popup-label">Threat Level</div>
+        <div class="popup-value highlight" id="popup-threat">—</div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <div class="dot-green"></div>
+      <span>INTEL VERIFIED — PRESS ESC TO CLOSE</span>
+    </div>
+  </div>
+
+  <!-- ██ COORDINATE DISPLAY ██ -->
+  <div id="coord-display"></div>
+
+  <!-- ██ BOTTOM STATUS BAR ██ -->
+  <div id="status-bar">
+    <div class="status-item">
+      <span class="status-label">TIME:</span>
+      <span class="status-value" id="status-clock">—</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">PROTOCOL:</span>
+      <span class="status-value">AES-256</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">NETWORK:</span>
+      <span class="status-value">MESH ACTIVE</span>
+    </div>
+    <div class="status-item">
+      <span class="status-label">SAT LINK:</span>
+      <span class="status-value">ONLINE</span>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="aqi_simulator.js"></script>
+  <script src="safe_routes.js"></script>
+  <script src="pathway_stream.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

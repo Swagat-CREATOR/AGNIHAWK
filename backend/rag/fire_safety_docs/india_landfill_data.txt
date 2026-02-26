@@ -1,0 +1,61 @@
+MAJOR LANDFILL SITES IN INDIA - DATA AND GPS COORDINATES
+
+1. GHAZIPUR LANDFILL, DELHI
+- GPS: 28.6218°N, 77.3266°E
+- Area: ~70 acres
+- Height: ~65 meters (higher than Taj Mahal)
+- Daily waste intake: ~2,500 tonnes
+- Operational since: 1984 (exceeded capacity in 2002)
+- Major fire incidents: 2017 (burned for days), 2020, 2022
+- Nearby population: >1 million within 5km radius
+- Risk factors: Extreme height, poor gas management, dense surrounding population
+
+2. BHALSWA LANDFILL, DELHI
+- GPS: 28.7357°N, 77.1635°E
+- Area: ~40 acres
+- Height: ~50 meters
+- Daily waste intake: ~2,200 tonnes
+- Operational since: 1993 (exceeded capacity in 2006)
+- Major fire incidents: 2022 (April, multiple fires during heatwave)
+- Nearby population: ~500,000 within 3km radius
+
+3. OKHLA LANDFILL, DELHI
+- GPS: 28.5303°N, 77.2787°E
+- Area: ~50 acres
+- Operational since: 1994
+- Note: Partially decommissioned, waste-to-energy plant operational nearby
+
+4. DEONAR LANDFILL, MUMBAI
+- GPS: 19.0596°N, 72.9217°E
+- Area: ~326 acres (one of the largest in Asia)
+- Daily waste intake: ~5,500 tonnes
+- Operational since: 1927 (nearly 100 years old)
+- Major fire incidents: 2016 (massive fire, smoke visible from space, flights affected)
+- Nearby population: >600,000 within 5km radius
+
+5. PIRANA LANDFILL, AHMEDABAD
+- GPS: 22.9808°N, 72.5614°E
+- Area: ~84 acres
+- Height: ~50 meters
+- Daily waste intake: ~3,500 tonnes
+- Major fire incidents: Multiple recurring fires
+- Bioremediation efforts underway
+
+6. MAVALLIPURA LANDFILL, BENGALURU
+- GPS: 13.1416°N, 77.5082°E
+- Area: ~100 acres
+- Note: Closed in 2012 due to environmental concerns, but waste remains
+
+7. KODUNGAIYUR LANDFILL, CHENNAI
+- GPS: 13.1412°N, 80.2649°E
+- Area: ~230 acres
+- Daily waste intake: ~2,000 tonnes
+- Major fire incidents: 2019, 2020
+- Nearby population: Dense residential areas within 1km
+
+NATIONAL STATISTICS:
+- India generates approximately 62 million tonnes of solid waste per year.
+- Only 20% of this waste is processed/treated.
+- Over 3,159 dumpsites exist across India (as of CPCB 2021 report).
+- Landfill fires account for significant PM2.5 and methane emissions contributing to air quality crises.
+- The informal waste picking sector employs an estimated 1.5-4 million workers across India.

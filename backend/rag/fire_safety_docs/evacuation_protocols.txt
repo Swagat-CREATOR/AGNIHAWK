@@ -1,0 +1,32 @@
+LANDFILL FIRE EMERGENCY EVACUATION AND RESPONSE PROTOCOLS
+
+1. ALERT LEVELS
+- GREEN (Risk Score 0-30): Normal operations. Routine monitoring.
+- YELLOW (Risk Score 31-50): Elevated risk. Increase monitoring frequency. Notify site supervisor.
+- ORANGE (Risk Score 51-70): High risk. Prepare evacuation routes. Deploy pre-wetting teams. Alert local fire department.
+- RED (Risk Score 71-90): Critical risk. Initiate partial evacuation of affected sectors. Deploy fire suppression. Alert municipal authorities and nearby hospitals.
+- BLACK (Risk Score 91-100): Imminent combustion. Full evacuation. Deploy all emergency services. Issue public health advisory for surrounding 5km radius.
+
+2. EVACUATION PROCEDURES
+- All waste pickers and site workers must evacuate the affected sector immediately upon RED alert.
+- Assembly points should be located upwind and at least 500 meters from the landfill boundary.
+- Head counts must be conducted within 10 minutes of evacuation order.
+- Emergency medical teams should be on standby at assembly points.
+
+3. PRE-EMPTIVE INTERVENTIONS
+- Pre-soaking: Apply water or foam to high-risk sectors when temperature exceeds 70°C.
+- Gas venting: Open or install gas extraction wells to reduce subsurface methane pressure.
+- Surface sealing: Apply clay or soil cover to oxygen-starved areas to prevent surface fires.
+- Cooling trenches: Excavate trenches around hot zones to create firebreaks.
+
+4. NOTIFICATION CHAIN
+- Level 1 (Automated): SMS/WhatsApp alerts to on-site workers within 30 seconds of RED alert.
+- Level 2 (Supervisor): Phone call to site manager and municipal solid waste department within 2 minutes.
+- Level 3 (Emergency): Alert fire department, police, and nearest hospital within 5 minutes.
+- Level 4 (Public): Issue public health advisory via municipal channels for surrounding residential areas.
+
+5. POST-FIRE ACTIONS
+- Continuous air quality monitoring for particulate matter (PM2.5, PM10) in surrounding areas.
+- Health screenings for exposed workers and nearby residents.
+- Root cause analysis to prevent recurrence.
+- Documentation and reporting to Central Pollution Control Board (CPCB) and State Pollution Control Board (SPCB).

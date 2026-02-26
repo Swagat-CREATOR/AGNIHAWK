@@ -1,0 +1,40 @@
+LANDFILL FIRE CHEMISTRY AND METHANE COMBUSTION PROPERTIES
+
+1. METHANE (CH4) IN LANDFILLS
+- Methane is the primary flammable gas produced in landfills through anaerobic decomposition of organic waste.
+- Landfill gas typically contains 45-60% methane and 40-60% carbon dioxide, with trace amounts of hydrogen sulfide, ammonia, and volatile organic compounds (VOCs).
+- Methane has a Lower Explosive Limit (LEL) of 5% by volume in air and an Upper Explosive Limit (UEL) of 15%.
+- Autoignition temperature of methane: 537°C (999°F). However, in the presence of catalysts or confined organic materials, ignition can occur at significantly lower temperatures.
+
+2. SUBSURFACE TEMPERATURE THRESHOLDS
+- Normal landfill internal temperature: 30-60°C
+- Elevated risk zone: 60-80°C (accelerated decomposition, increased gas production)
+- Critical risk zone: 80-100°C (pre-combustion conditions, spontaneous ignition possible)
+- Active combustion: >100°C (self-sustaining underground fire)
+- Deep-seated landfill fires can reach temperatures of 300-700°C.
+
+3. FACTORS ACCELERATING LANDFILL FIRES
+- Low moisture content (<25%) in waste layers increases fire risk.
+- High wind speeds (>15 km/h) increase oxygen supply to exposed waste surfaces.
+- Low atmospheric humidity (<30%) accelerates surface drying.
+- Poor compaction creates air pockets that allow oxygen infiltration.
+- Presence of reactive materials (batteries, chemicals, aerosol cans) can trigger localized ignition.
+- Hot weather combined with methane accumulation creates ideal conditions.
+
+4. TYPES OF LANDFILL FIRES
+- Surface fires: Occur on the landfill surface, often ignited by external sources. Detectable visually.
+- Subsurface/deep-seated fires: Occur within the waste mass. Extremely difficult to detect and extinguish. Can burn for months or years. Detected by elevated temperatures and gas emissions.
+- Spontaneous combustion: Caused by exothermic chemical reactions within the waste mass without external ignition source.
+
+5. EMISSIONS FROM LANDFILL FIRES
+- Burning municipal solid waste releases: carbon monoxide (CO), particulate matter (PM2.5, PM10), dioxins and furans, volatile organic compounds, hydrogen chloride, heavy metals.
+- A single large landfill fire can release emissions equivalent to thousands of vehicles over its burning duration.
+- Health impacts include respiratory illness, cardiovascular disease, and increased cancer risk for surrounding populations.
+
+6. FIRE DETECTION INDICATORS
+- Subsurface temperature readings exceeding 80°C
+- Methane concentrations dropping below normal (being consumed by combustion)
+- Carbon monoxide (CO) levels rising above 50 ppm
+- Settlement or subsidence of landfill surface
+- Odor changes (sharp, acrid smell vs. normal decay odor)
+- Smoke or steam emissions from surface cracks

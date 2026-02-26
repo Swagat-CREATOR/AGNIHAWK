@@ -1,0 +1,6 @@
+pathway[all]
+python-dotenv
+requests
+flask
+flask-cors
+sentence-transformers
